@@ -1,0 +1,43 @@
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: url("background.png");
+        background-size: cover;
+        font-family: Courier;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        background-color: #751092;
+        font-family: Courier;
+    }
+}
+
+input {
+    border-radius: 50px;
+}
+
+.white_div {
+    min-width: 350px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type=SUBMIT] {
+    background-color: #9400D3;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: Courier;
+}
