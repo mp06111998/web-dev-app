@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $error = NULL;
 
 if(isset ($_POST['submit'])) {
@@ -24,7 +26,9 @@ if(isset ($_POST['submit'])) {
         
         if($verified == 0){ //Change on 1 after mail
             //Continue Processing
-            header('location:thankyou.php');
+            $_SESSION['u'] = $u;
+            
+            header('location:first.php');
         }
         else{
             $error = "<p style='color:#9400D3'><b>This account has not <br> yet been verified! <br><br> An email was sent to <br> $email <br> on $date.</b></p>";
