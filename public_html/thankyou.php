@@ -7,7 +7,7 @@ header( "refresh:5;url=index.php" );
 
 <head>
     <title>web-dev-app</title>
-    <link rel="icon" href="purple-ribbon.png">
+    <link rel="icon" href="leaf.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +27,7 @@ header( "refresh:5;url=index.php" );
                         <td></td>
                     </tr>
                     <td align="center">
-                        <h2 style='color:#9400D3'>Successfully <br>registered!</h2> <br>
+                        <h2 style='color:#5e6c2e'>Successfully <br>registered!</h2> <br>
                         <p>Redirecting to Log In <br>page in 5 seconds...</p>
                     </td>
                     <tr>

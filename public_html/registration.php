@@ -15,16 +15,16 @@ if(isset ($_POST['submit'])) {
     $resultSet = $mysqli->query("SELECT * FROM accounts WHERE username = '$u' LIMIT 1");
     
     if(strlen($u) < 5){
-        $error = "<p style='color:#9400D3'><b>Your username must be <br>at least 5 characters!</b></p>";
+        $error = "<p style='color:#5e6c2e'><b>Your username must be <br>at least 5 characters!</b></p>";
     }
     elseif($p2 != $p){
-        $error .= "<p style='color:#9400D3'><b>Your passwords do not match!</b></p>";
+        $error .= "<p style='color:#5e6c2e'><b>Your passwords do not match!</b></p>";
     }
     elseif(strlen($p) < 5){
-        $error .= "<p style='color:#9400D3'><b>Your password must be <br>at least 5 characters!</b></p>";
+        $error .= "<p style='color:#5e6c2e'><b>Your password must be <br>at least 5 characters!</b></p>";
     }
     elseif($resultSet->num_rows !=0){
-        $error .= "<p style='color:#9400D3'><b>An account with that <br> username already exists!</b></p>";
+        $error .= "<p style='color:#5e6c2e'><b>An account with that <br> username already exists!</b></p>";
     }
     else{
         //Form is valid
@@ -69,7 +69,7 @@ if(isset ($_POST['submit'])) {
 
 <head>
     <title>web-dev-app</title>
-    <link rel="icon" href="purple-ribbon.png">
+    <link rel="icon" href="leaf.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -81,7 +81,7 @@ if(isset ($_POST['submit'])) {
                 <table border="0" align="center" cellpadding="5">
                     <tr>
                         <td align="center">
-                            <h2 style="color:#9400D3">Register</h2>
+                            <h2 style="color:#5e6c2e">Register</h2>
                         </td>
                     </tr>
                     <tr>
@@ -124,7 +124,7 @@ if(isset ($_POST['submit'])) {
                         <td></td>
                     </tr>
                     <tr>
-                        <td align="center">Already have account? <a style="color:#9400D3; text-decoration:none" href="index.php">Log In</a></td>
+                        <td align="center">Already have account? <a style="color:#5e6c2e; text-decoration:none" href="index.php">Log In</a></td>
                     </tr>
                 </table>
             </form>

@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1024px) {
     body {
-        background-image: url("background.png");
+        background-image: url("background.jpg");
         background-size: cover;
         font-family: Courier;
     }
@@ -8,7 +8,7 @@
 
 @media only screen and (max-width: 1024px) {
     body {
-        background-color: #751092;
+        background-color: #5e6c2e;
         font-family: Courier;
     }
 }
@@ -19,8 +19,8 @@ input {
 
 .white_div {
     min-width: 350px;
-    background-color: white;
-    border: 2px solid white;
+    background-color: #cabdb0;
+    border: 2px solid #a59380;
     border-radius: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -32,7 +32,7 @@ input {
 }
 
 input[type=SUBMIT] {
-    background-color: #9400D3;
+    background-color: #5e6c2e;
     border: none;
     color: white;
     padding: 5px 32px;
@@ -41,3 +41,10 @@ input[type=SUBMIT] {
     cursor: pointer;
     font-family: Courier;
 }
+
+/*
+svetla #95a453
+
+temna #5e6c2e
+
+*/

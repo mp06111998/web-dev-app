@@ -31,12 +31,12 @@ if(isset ($_POST['submit'])) {
             header('location:first.php');
         }
         else{
-            $error = "<p style='color:#9400D3'><b>This account has not <br> yet been verified! <br><br> An email was sent to <br> $email <br> on $date.</b></p>";
+            $error = "<p style='color:#5e6c2e'><b>This account has not <br> yet been verified! <br><br> An email was sent to <br> $email <br> on $date.</b></p>";
         }
     }
     else{
         //Invalid credentials
-        $error = "<p style='color:#9400D3'><b>The username or password <br> you entered is incorrect!</b></p>";
+        $error = "<p style='color:#5e6c2e'><b>The username or password <br> you entered is incorrect!</b></p>";
     }
 }
 ?>
@@ -46,7 +46,7 @@ if(isset ($_POST['submit'])) {
 
 <head>
     <title>web-dev-app</title>
-    <link rel="icon" href="purple-ribbon.png">
+    <link rel="icon" href="leaf.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -58,7 +58,7 @@ if(isset ($_POST['submit'])) {
                 <table border="0" align="center" cellpadding="5">
                     <tr>
                         <td align="center">
-                            <h2 style="color:#9400D3">Log In</h2>
+                            <h2 style="color:#5e6c2e">Log In</h2>
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@ if(isset ($_POST['submit'])) {
                         <td></td>
                     </tr>
                     <tr>
-                        <td align="center">Don't have account? <a style="color:#9400D3; text-decoration:none" href="registration.php">Register</a></td>
+                        <td align="center">Don't have account? <a style="color:#5e6c2e; text-decoration:none" href="registration.php">Register</a></td>
                     </tr>
                 </table>
             </form>
