@@ -13,6 +13,8 @@ if(!isset($_SESSION['u'])) {
     <title>web-dev-app</title>
     <link rel="icon" href="leaf.png">
     <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="purple-ribbon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -59,6 +61,24 @@ if(!isset($_SESSION['u'])) {
     </div>
     <div class="white_div">
         ttrraa
+    </div>
+    <div id="image_div">
+        <div class="white_div">
+            <form method="POST" action="">
+                <table border="0" align="center" cellpadding="5">
+                    <tr>
+                        <td align="center">
+                            <?php 
+                                echo $_SESSION['u'];
+                            ?>
+                        </td>
+                        <td>
+                            <a style="color:#9400D3; text-decoration:none" href="logout.php">Log Out</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 
     <style>
