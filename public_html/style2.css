@@ -14,12 +14,34 @@
     .right {
         float: right;
     }
+    
+    .picss { 
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        /*width: 200px;*/
+        width: 60%;
+        height: 90%;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
     body {
         background-color: #5e6c2e;
         font-family: Courier;
+    }
+    
+    .upgrade {
+        float: center;
+        width: 90%;
+    }
+    
+    .picss {
+        /*width: 130px;*/
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
     }
 
     /*test*/
@@ -78,9 +100,24 @@ input {
     border: 2px solid #a59380;
     border-radius: 20px;
     margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    
 }
 
-input[type=SUBMIT] {
+.leftpic {
+    float: left;
+    width: 55%;
+}
+
+.upgrade {
+    float: right;
+    width: 45%;
+    font-size: 10px;
+}
+
+.butt{
     background-color: #5e6c2e;
     border: none;
     color: white;
@@ -89,6 +126,26 @@ input[type=SUBMIT] {
     margin: 4px 2px;
     cursor: pointer;
     font-family: Courier;
+    /*margin-right: 20px;
+    margin-top: 20px;
+    float: right;*/
+    border-radius: 50px;
+}
+
+.butt2{
+    background-color: #5e6c2e;
+    border: none;
+    color: white;
+    padding: 2px 16px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    font-family: Courier;
+    /*margin-right: 20px;
+    margin-top: 20px;
+    float: right;*/
+    border-radius: 50px;
+    font-size: 10px;
 }
 
 .menu {
@@ -100,7 +157,6 @@ input[type=SUBMIT] {
 }
 
 .up {
-    height: 500px;
     background-color: background-color:rgba(0, 0, 0, 0.5);
     width: 60%;
     margin: 0 auto;
@@ -118,29 +174,25 @@ input[type=SUBMIT] {
 .choice {}
 
 .four_left {
-    width: 48%;
+    width: 47%;
     height: 45%;
     float: left;
     background-color: #95a453;
-    border: 2px solid #95a453;
     border-radius: 20px;
     margin-top: 1%;
     margin-bottom: 1%;
     border: 2px solid #5e6c2e;
+    padding: 1% 1% 1% 1%;
 }
 
 .four_right {
-    width: 48%;
+    width: 47%;
     height: 45%;
     float: right;
     background-color: #95a453;
-    border: 2px solid #95a453;
     border-radius: 20px;
     margin-top: 1%;
     margin-bottom: 1%;
     border: 2px solid #5e6c2e;
-}
-
-.picss {
-    width: 60%;
+    padding: 1% 1% 1% 1%;
 }
