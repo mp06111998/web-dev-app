@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 08. sep 2021 ob 13.42
+-- Čas nastanka: 20. sep 2021 ob 10.42
 -- Različica strežnika: 10.4.21-MariaDB
 -- Različica PHP: 7.3.30
 
@@ -38,6 +38,38 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Odloži podatke za tabelo `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `vkey`, `verified`, `createdate`) VALUES
+(1, 'testek', 'f7e0ef389ac6133c88aedbd66b44a4e1', 'marcel.polanc1998@gmail.com', '1d42d6ff3cde81168d5da815bd3fa126', 0, '2021-09-17 07:54:11.961788');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `materials`
+--
+
+CREATE TABLE `materials` (
+  `id_materials` int(11) NOT NULL,
+  `wood` int(11) NOT NULL,
+  `clay` int(11) NOT NULL,
+  `iron` int(11) NOT NULL,
+  `wheat` int(11) NOT NULL,
+  `wood_land` int(11) NOT NULL,
+  `clay_land` int(11) NOT NULL,
+  `iron_land` int(11) NOT NULL,
+  `wheat_land` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Odloži podatke za tabelo `materials`
+--
+
+INSERT INTO `materials` (`id_materials`, `wood`, `clay`, `iron`, `wheat`, `wood_land`, `clay_land`, `iron_land`, `wheat_land`) VALUES
+(1, 296, 222, 238, 20279, 7, 4, 4, 6);
+
+--
 -- Indeksi zavrženih tabel
 --
 
@@ -48,6 +80,12 @@ ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksi tabele `materials`
+--
+ALTER TABLE `materials`
+  ADD PRIMARY KEY (`id_materials`);
+
+--
 -- AUTO_INCREMENT zavrženih tabel
 --
 
@@ -55,7 +93,17 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT tabele `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Omejitve tabel za povzetek stanja
+--
+
+--
+-- Omejitve za tabelo `materials`
+--
+ALTER TABLE `materials`
+  ADD CONSTRAINT `materials_ibfk_1` FOREIGN KEY (`id_materials`) REFERENCES `accounts` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
