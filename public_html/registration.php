@@ -62,6 +62,7 @@ if(isset ($_POST['submit'])) {
                         echo $row["id"];
                         $get_id = $row["id"];
                         $insert2 = $mysqli->query("INSERT INTO materials(id_materials,wood,clay,iron,wheat,wood_land,clay_land,iron_land,wheat_land) VALUES('$get_id','0','0','0','0','1','1','1','1')");
+                        $insert3 = $mysqli->query("INSERT INTO units(id_units,number) VALUES('$get_id','0')");
                     }
                 }
             

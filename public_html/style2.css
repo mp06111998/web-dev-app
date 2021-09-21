@@ -175,24 +175,24 @@ input {
 
 .four_left {
     width: 47%;
-    height: 45%;
+    height: 160px;
     float: left;
     background-color: #95a453;
     border-radius: 20px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 2px solid #5e6c2e;
-    padding: 1% 1% 1% 1%;
+    padding: 10px 5px 5px 5px;
 }
 
 .four_right {
     width: 47%;
-    height: 45%;
+    height: 160px;
     float: right;
     background-color: #95a453;
     border-radius: 20px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 2px solid #5e6c2e;
-    padding: 1% 1% 1% 1%;
+    padding: 10px 5px 5px 5px;
 }
