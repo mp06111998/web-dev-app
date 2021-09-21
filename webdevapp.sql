@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 20. sep 2021 ob 10.42
+-- Čas nastanka: 21. sep 2021 ob 12.16
 -- Različica strežnika: 10.4.21-MariaDB
 -- Različica PHP: 7.3.30
 
@@ -42,7 +42,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `vkey`, `verified`, `createdate`) VALUES
-(1, 'testek', 'f7e0ef389ac6133c88aedbd66b44a4e1', 'marcel.polanc1998@gmail.com', '1d42d6ff3cde81168d5da815bd3fa126', 0, '2021-09-17 07:54:11.961788');
+(4, 'testek', 'f7e0ef389ac6133c88aedbd66b44a4e1', 'marcel.polanc1998@gmail.com', '370c7e51f9c186ff0f2fbe4e9bcd4533', 0, '2021-09-21 09:10:36.081330'),
+(5, 'marceltest', 'b0baee9d279d34fa1dfd71aadb908c3f', 'marcel.polanc1998@gmail.com', '9d4d35eb9440c10497086ac3205cee1a', 0, '2021-09-21 09:31:20.393661'),
+(6, 'asdasd', '3cba1eb7a5bcd42097c3c3b6ff74c3a0', 'marcel.polanc1998@gmail.com', '687bb4c3a067ad07c4b63e47df5c2545', 0, '2021-09-21 09:31:32.906783');
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,29 @@ CREATE TABLE `materials` (
 --
 
 INSERT INTO `materials` (`id_materials`, `wood`, `clay`, `iron`, `wheat`, `wood_land`, `clay_land`, `iron_land`, `wheat_land`) VALUES
-(1, 296, 222, 238, 20279, 7, 4, 4, 6);
+(4, 140, 102, 36, 282, 2, 1, 1, 1),
+(5, 0, 0, 0, 0, 1, 1, 1, 1),
+(6, 0, 0, 0, 0, 1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `units`
+--
+
+CREATE TABLE `units` (
+  `id_units` int(11) NOT NULL,
+  `number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Odloži podatke za tabelo `units`
+--
+
+INSERT INTO `units` (`id_units`, `number`) VALUES
+(4, 2),
+(5, 100),
+(6, 1);
 
 --
 -- Indeksi zavrženih tabel
@@ -86,6 +110,12 @@ ALTER TABLE `materials`
   ADD PRIMARY KEY (`id_materials`);
 
 --
+-- Indeksi tabele `units`
+--
+ALTER TABLE `units`
+  ADD PRIMARY KEY (`id_units`);
+
+--
 -- AUTO_INCREMENT zavrženih tabel
 --
 
@@ -93,7 +123,7 @@ ALTER TABLE `materials`
 -- AUTO_INCREMENT tabele `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Omejitve tabel za povzetek stanja
