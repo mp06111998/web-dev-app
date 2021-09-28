@@ -196,3 +196,19 @@ input {
     border: 2px solid #5e6c2e;
     padding: 10px 5px 5px 5px;
 }
+
+.maps {
+    height: 344px;
+    background-color: #95a453;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #5e6c2e;
+    padding: 25px 5px 5px 5px;
+    text-align: center;
+}
+
+#canvas {
+    border: 2px solid #5e6c2e;
+    cursor: pointer;
+}
