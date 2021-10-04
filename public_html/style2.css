@@ -212,3 +212,39 @@ input {
     border: 2px solid #5e6c2e;
     cursor: pointer;
 }
+
+table {
+    overflow-y:scroll;
+    height:350px;
+    display:block;
+    /*border-radius: 20px;*/
+    border: 2px solid #5e6c2e;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+/*th {
+  position: sticky;
+  top: 0; 
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cabdb0; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5e6c2e; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5e6c2e; 
+}

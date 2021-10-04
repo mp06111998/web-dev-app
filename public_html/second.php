@@ -88,24 +88,39 @@ if(!isset($_SESSION['u'])) {
             <div class="upgrade" style="width: 60%;">
                 <?php
                     $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
-                    $sql = "SELECT * FROM accounts";
+                    $sql = "SELECT * FROM units ORDER BY number DESC";
                     $result = mysqli_query($db, $sql);              
                 ?>
                <table>
                    <tr>
-                       <td><b>Username</b></td>
-                       <td>&nbsp;</td>
-                       <td><b>Units</b></td>
+                       <th>Username</th>
+                       <th>&nbsp;</th>
+                       <th>Units</th>
                    </tr>
                    <?php
                    if ($result->num_rows > 0){
                             while($row = $result->fetch_assoc()){
                    ?>
                     <tr>
-                        <td><?php echo $row['username']; ?></td>
+                        <td><?php 
+                            $iddd2 = $row['id_units'];
+                            $sql3 = "SELECT username FROM accounts WHERE id = '$iddd2';";
+                            $result3 = mysqli_query($db, $sql3);
+                            if ($result3->num_rows > 0){
+                                while($row3 = $result3->fetch_assoc()){
+                                    if($_SESSION['u'] == $row3["username"]){
+                                        echo '<span style="color: white">' . $row3["username"] . '</span>';
+                                    }
+                                    else{
+                                        echo $row3["username"];
+                                    }
+                                }
+                            }
+                        ?>
+                        </td>
                         <td>&nbsp;</td>
                         <td><?php 
-                            $iddd = $row['id'];
+                            $iddd = $row['id_units'];
                             $db2 = mysqli_connect('localhost', 'root', '', 'webdevapp');
                             $sql2 = "SELECT * FROM units WHERE id_units = $iddd";
                             $result2 = mysqli_query($db2, $sql2);
