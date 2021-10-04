@@ -85,17 +85,17 @@ if(!isset($_SESSION['u'])) {
            <div class="leftpic" style="width: 40%;">
                 <img class="picss" src="pics/ambasada.png" alt="">
             </div>
-            <div class="upgrade" style="width: 60%;">
+            <div class="upgrade" style="width: 55%; margin-right: 10px;">
                 <?php
                     $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                     $sql = "SELECT * FROM units ORDER BY number DESC";
                     $result = mysqli_query($db, $sql);              
                 ?>
                <table>
-                   <tr>
+                   <tr style="background-color: #5e6c2e;">
                        <th>Username</th>
-                       <th>&nbsp;</th>
                        <th>Units</th>
+                       <th>Playing since</th>
                    </tr>
                    <?php
                    if ($result->num_rows > 0){
@@ -118,7 +118,6 @@ if(!isset($_SESSION['u'])) {
                             }
                         ?>
                         </td>
-                        <td>&nbsp;</td>
                         <td><?php 
                             $iddd = $row['id_units'];
                             $db2 = mysqli_connect('localhost', 'root', '', 'webdevapp');
@@ -128,6 +127,17 @@ if(!isset($_SESSION['u'])) {
                                     while($row2 = $result2->fetch_assoc()){
                                         echo $row2['number'];}}
                             ?></td>
+                        <td><?php 
+                            $iddd4 = $row['id_units'];
+                            $sql4 = "SELECT createdate FROM accounts WHERE id = '$iddd4';";
+                            $result4 = mysqli_query($db, $sql4);
+                            if ($result4->num_rows > 0){
+                                while($row4 = $result4->fetch_assoc()){
+                                    echo substr($row4["createdate"], 0, 10);
+                                }
+                            }
+                        ?>
+                        </td>
                     </tr>
                    <?php
                    }}

@@ -229,6 +229,19 @@ table {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
 }*/
 
+td {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+th {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: white;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
