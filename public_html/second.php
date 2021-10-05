@@ -53,15 +53,15 @@ if(!isset($_SESSION['u'])) {
         </div>
     </div>
     <div class="up">
-       <form action="buildings.php" method="post">
-        <div class="four_left">
-            <div class="leftpic">
-                <img class="picss" src="pics/barracks.png" alt="">
-            </div>
-            <div class="upgrade">
-                <button class="butt" name="units" value="number">Train unit</button><br><br>
-                Total units: <span style="color: white; background-color: #5e6c2e; border-radius: 20px;">&nbsp;
-                <?php
+        <form action="buildings.php" method="post">
+            <div class="four_left">
+                <div class="leftpic">
+                    <img class="picss" src="pics/barracks.png" alt="">
+                </div>
+                <div class="upgrade">
+                    <button class="butt" name="units" value="number">Train unit</button><br><br>
+                    Total units: <span style="color: white; background-color: #5e6c2e; border-radius: 20px;">&nbsp;
+                        <?php
                 $idd = $_SESSION['id'];
                 $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                         $sql = "SELECT number FROM units WHERE id_units = '$idd';";
@@ -72,37 +72,54 @@ if(!isset($_SESSION['u'])) {
                             }
                         }
                 ?>
-                &nbsp;</span> <br>
-                Unit price: <br>
-                <img style="height: 15px;" src="pics/wood.png" alt=""> 140
-                <img style="height: 15px;" src="pics/clay.png" alt=""> 150<br>
-                <img style="height: 15px;" src="pics/iron.png" alt=""> 185
-                <img style="height: 15px;" src="pics/wheat.png" alt=""> 60
+                        &nbsp;</span> <br>
+                    Unit price: <br>
+                    <img style="height: 15px;" src="pics/wood.png" alt=""> 140
+                    <img style="height: 15px;" src="pics/clay.png" alt=""> 150<br>
+                    <img style="height: 15px;" src="pics/iron.png" alt=""> 185
+                    <img style="height: 15px;" src="pics/wheat.png" alt=""> 60
+                </div>
+                <div style="clear:both"></div>
             </div>
-            <div style="clear:both"></div>
-        </div>
-        <div class="four_right" style="height: 359px;">
-           <div class="leftpic" style="width: 40%;">
-                <img class="picss" src="pics/ambasada.png" alt="">
-            </div>
-            <div class="upgrade" style="width: 55%; margin-right: 10px;">
-                <?php
+            <div class="four_right" style="height: 359px;">
+                <div class="leftpic" style="width: 40%;">
+                    <img class="picss" src="pics/ambasada.png" alt="">
+                </div>
+                <div class="upgrade" style="width: 55%; margin-right: 10px;">
+                    <?php
                     $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                     $sql = "SELECT * FROM units ORDER BY number DESC";
                     $result = mysqli_query($db, $sql);              
                 ?>
-               <table>
-                   <tr style="background-color: #5e6c2e;">
-                       <th>Username</th>
-                       <th>Units</th>
-                       <th>Playing since</th>
-                   </tr>
-                   <?php
+                    <table>
+                        <tr style="background-color: #5e6c2e;">
+                            <th>No.</th>
+                            <th>Username</th>
+                            <th>Units</th>
+                            <th>Playing since</th>
+                        </tr>
+                        <?php
+                   $counter = 1;
                    if ($result->num_rows > 0){
                             while($row = $result->fetch_assoc()){
                    ?>
-                    <tr>
-                        <td><?php 
+                        <tr>
+                            <td>
+                                <?php
+                                echo $counter;
+                                if($counter == 1){
+                                            echo '<img style="height: 10px;" src="pics/1.png" alt="">';
+                                        }
+                                        else if($counter == 2){
+                                            echo '<img style="height: 10px;" src="pics/2.png" alt="">';
+                                        }
+                                        else if($counter == 3){
+                                            echo '<img style="height: 10px;" src="pics/3.png" alt="">';
+                                        }
+                                        $counter = $counter + 1;
+                            ?>
+                            </td>
+                            <td><?php 
                             $iddd2 = $row['id_units'];
                             $sql3 = "SELECT username FROM accounts WHERE id = '$iddd2';";
                             $result3 = mysqli_query($db, $sql3);
@@ -117,8 +134,8 @@ if(!isset($_SESSION['u'])) {
                                 }
                             }
                         ?>
-                        </td>
-                        <td><?php 
+                            </td>
+                            <td><?php 
                             $iddd = $row['id_units'];
                             $db2 = mysqli_connect('localhost', 'root', '', 'webdevapp');
                             $sql2 = "SELECT * FROM units WHERE id_units = $iddd";
@@ -127,7 +144,7 @@ if(!isset($_SESSION['u'])) {
                                     while($row2 = $result2->fetch_assoc()){
                                         echo $row2['number'];}}
                             ?></td>
-                        <td><?php 
+                            <td><?php 
                             $iddd4 = $row['id_units'];
                             $sql4 = "SELECT createdate FROM accounts WHERE id = '$iddd4';";
                             $result4 = mysqli_query($db, $sql4);
@@ -137,21 +154,21 @@ if(!isset($_SESSION['u'])) {
                                 }
                             }
                         ?>
-                        </td>
-                    </tr>
-                   <?php
+                            </td>
+                        </tr>
+                        <?php
                    }}
                    ?>
-                </table>
+                    </table>
+                </div>
+                <div style="clear:both"></div>
             </div>
-            <div style="clear:both"></div>
-        </div>
-        <div class="four_left">
-           <div class="leftpic">
-                <img class="picss" src="pics/marketplace.png" alt="">
-            </div>
-            <div class="upgrade">
-                <!--<button class="butt" name="mater" value="iron">Iron</button><br><br>
+            <div class="four_left">
+                <div class="leftpic">
+                    <img class="picss" src="pics/marketplace.png" alt="">
+                </div>
+                <div class="upgrade">
+                    <!--<button class="butt" name="mater" value="iron">Iron</button><br><br>
                 Field level: <span style="color: white; background-color: #5e6c2e; border-radius: 20px;">&nbsp;
                 <?php
                 //$idd = $_SESSION['id'];
@@ -171,15 +188,15 @@ if(!isset($_SESSION['u'])) {
                 <img style="height: 15px;" src="pics/iron.png" alt=""> 1000
                 <img style="height: 15px;" src="pics/wheat.png" alt=""> 1000<br><br>
                 <button class="butt2" name="upgr" value="iron_land">Upgrade field</button>-->
+                </div>
+                <div style="clear:both"></div>
             </div>
             <div style="clear:both"></div>
-        </div>
-        <div style="clear:both"></div>
         </form>
     </div>
     <div class="white_div">
-      <img src="pics/wood.png" alt="">
-       <?php
+        <img src="pics/wood.png" alt="">
+        <?php
         $idd = $_SESSION['id'];
         $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                 $sql = "SELECT wood FROM materials WHERE id_materials = '$idd';";
@@ -190,9 +207,9 @@ if(!isset($_SESSION['u'])) {
                     }
                 }
         ?>
-        
+
         <img src="pics/clay.png" alt="">
-       <?php
+        <?php
         $idd = $_SESSION['id'];
         $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                 $sql = "SELECT clay FROM materials WHERE id_materials = '$idd';";
@@ -203,9 +220,9 @@ if(!isset($_SESSION['u'])) {
                     }
                 }
         ?>
-        
+
         <img src="pics/iron.png" alt="">
-       <?php
+        <?php
         $idd = $_SESSION['id'];
         $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                 $sql = "SELECT iron FROM materials WHERE id_materials = '$idd';";
@@ -216,9 +233,9 @@ if(!isset($_SESSION['u'])) {
                     }
                 }
         ?>
-        
+
         <img src="pics/wheat.png" alt="">
-       <?php
+        <?php
         $idd = $_SESSION['id'];
         $db = mysqli_connect('localhost', 'root', '', 'webdevapp');
                 $sql = "SELECT wheat FROM materials WHERE id_materials = '$idd';";
